@@ -29,8 +29,8 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans**: 2 plans
 
 Plans:
-- [ ] 01-01-PLAN.md — Statische HTML-Struktur mit RUB-Design und Base64-Assets (Fonts, Logo, altipiano.png)
-- [ ] 01-02-PLAN.md — JavaScript-Logik: Validierung, JSONBin.io-Speicherung, Bestätigungsscreen, sessionStorage-Flag
+- [x] 01-01-PLAN.md — Statische HTML-Struktur mit RUB-Design und Base64-Assets (Fonts, Logo, altipiano.png)
+- [x] 01-02-PLAN.md — JavaScript-Logik: Validierung, JSONBin.io-Speicherung, Bestaetigungsscreen, sessionStorage-Flag
 
 ### Phase 2: Admin & Deployment
 **Goal**: Organisatoren koennen alle Antworten einsehen, als PDF exportieren, und die App ist per GitHub Pages erreichbar
