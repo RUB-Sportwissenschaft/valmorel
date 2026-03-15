@@ -26,12 +26,11 @@ Decimal phases appear between their surrounding integers in numeric order.
   2. Nach dem Absenden erscheint "Danke, [Vorname]! Deine Wahl wurde gespeichert." mit der gewaehlten Option und Gruppe, kein Zurueck-Button ist sichtbar
   3. Bei einem Netzwerkfehler sieht der Teilnehmer eine benutzerfreundliche Fehlermeldung auf Deutsch
   4. Die App sieht auf einem 320px-Smartphone korrekt aus: RUB-Logo oben, Orange-Akzente, lesbare Schrift, keine horizontale Scrollbar
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 01-01: Formular-Grundstruktur mit HTML/CSS (RUB-Design, mobile-first, Logo als Base64)
-- [ ] 01-02: Formular-Logik und Validierung (Pflichtfelder, Deaktivierung Absenden-Button, Fehlermeldungen)
-- [ ] 01-03: JSONBin.io-Speicherung und Bestaetigung (STOR-01–03, CONF-01–03, sessionStorage-Flag)
+- [ ] 01-01-PLAN.md — Statische HTML-Struktur mit RUB-Design und Base64-Assets (Fonts, Logo, altipiano.png)
+- [ ] 01-02-PLAN.md — JavaScript-Logik: Validierung, JSONBin.io-Speicherung, Bestätigungsscreen, sessionStorage-Flag
 
 ### Phase 2: Admin & Deployment
 **Goal**: Organisatoren koennen alle Antworten einsehen, als PDF exportieren, und die App ist per GitHub Pages erreichbar
@@ -56,5 +55,5 @@ Phases execute in numeric order: 1 → 2
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Teilnehmerformular | 0/3 | Not started | - |
+| 1. Teilnehmerformular | 0/2 | Not started | - |
 | 2. Admin & Deployment | 0/3 | Not started | - |
