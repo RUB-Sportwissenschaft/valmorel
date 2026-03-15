@@ -7,10 +7,10 @@
 
 ### Formular
 
-- [ ] **FORM-01**: Teilnehmer kann Vorname eingeben (Pflichtfeld, min. 2 Zeichen)
-- [ ] **FORM-02**: Teilnehmer kann Nachname eingeben (Pflichtfeld, min. 2 Zeichen)
-- [ ] **FORM-03**: Teilnehmer wählt Gruppe (1–8, Pflichtfeld — Dropdown oder Radio-Buttons)
-- [ ] **FORM-04**: Teilnehmer wählt genau eine Essensoption via Radio-Button: 🧀 Raclette | 🥦 Raclette vegetarisch | 🌱 Vegan
+- [x] **FORM-01**: Teilnehmer kann Vorname eingeben (Pflichtfeld, min. 2 Zeichen)
+- [x] **FORM-02**: Teilnehmer kann Nachname eingeben (Pflichtfeld, min. 2 Zeichen)
+- [x] **FORM-03**: Teilnehmer wählt Gruppe (1–8, Pflichtfeld — Dropdown oder Radio-Buttons)
+- [x] **FORM-04**: Teilnehmer wählt genau eine Essensoption via Radio-Button: 🧀 Raclette | 🥦 Raclette vegetarisch | 🌱 Vegan
 - [ ] **FORM-05**: Absenden-Button ist deaktiviert bis alle Pflichtfelder ausgefüllt und eine Option gewählt ist
 - [ ] **FORM-06**: Formular-Validierung zeigt klare Fehlermeldungen auf Deutsch
 
@@ -36,12 +36,12 @@
 
 ### Design & UX
 
-- [ ] **DSGN-01**: Logo `logo-wortmarke_sportwissenschaft_tartan-orange.png` als Base64 eingebettet, oben zentriert, auf RUB-Blau (#003560) Hintergrund-Header
-- [ ] **DSGN-02**: Primärfarbe RUB Orange #EC633A für Buttons und Akzente
-- [ ] **DSGN-03**: System-Fonts (font-family: system-ui, -apple-system, sans-serif)
-- [ ] **DSGN-04**: Mobile-first, responsive — funktioniert auf Smartphones (min. 320px Breite)
-- [ ] **DSGN-05**: Warm und simpel — kein Schnickschnack, keine Animationen
-- [ ] **DSGN-06**: `altipiano.png` als Base64 eingebettet, klein unten (Footer-Bereich), zentriert
+- [x] **DSGN-01**: Logo `logo-wortmarke_sportwissenschaft_tartan-orange.png` als Base64 eingebettet, oben zentriert, auf RUB-Blau (#003560) Hintergrund-Header
+- [x] **DSGN-02**: Primärfarbe RUB Orange #EC633A für Buttons und Akzente
+- [x] **DSGN-03**: System-Fonts (font-family: system-ui, -apple-system, sans-serif)
+- [x] **DSGN-04**: Mobile-first, responsive — funktioniert auf Smartphones (min. 320px Breite)
+- [x] **DSGN-05**: Warm und simpel — kein Schnickschnack, keine Animationen
+- [x] **DSGN-06**: `altipiano.png` als Base64 eingebettet, klein unten (Footer-Bereich), zentriert
 
 ### Deployment & Setup
 
@@ -70,10 +70,10 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| FORM-01 | Phase 1 — Teilnehmerformular | Pending |
-| FORM-02 | Phase 1 — Teilnehmerformular | Pending |
-| FORM-03 | Phase 1 — Teilnehmerformular | Pending |
-| FORM-04 | Phase 1 — Teilnehmerformular | Pending |
+| FORM-01 | Phase 1 — Teilnehmerformular | Complete |
+| FORM-02 | Phase 1 — Teilnehmerformular | Complete |
+| FORM-03 | Phase 1 — Teilnehmerformular | Complete |
+| FORM-04 | Phase 1 — Teilnehmerformular | Complete |
 | FORM-05 | Phase 1 — Teilnehmerformular | Pending |
 | FORM-06 | Phase 1 — Teilnehmerformular | Pending |
 | STOR-01 | Phase 1 — Teilnehmerformular | Pending |
@@ -82,12 +82,12 @@
 | CONF-01 | Phase 1 — Teilnehmerformular | Pending |
 | CONF-02 | Phase 1 — Teilnehmerformular | Pending |
 | CONF-03 | Phase 1 — Teilnehmerformular | Pending |
-| DSGN-01 | Phase 1 — Teilnehmerformular | Pending |
-| DSGN-02 | Phase 1 — Teilnehmerformular | Pending |
-| DSGN-03 | Phase 1 — Teilnehmerformular | Pending |
-| DSGN-04 | Phase 1 — Teilnehmerformular | Pending |
-| DSGN-05 | Phase 1 — Teilnehmerformular | Pending |
-| DSGN-06 | Phase 1 — Teilnehmerformular | Pending |
+| DSGN-01 | Phase 1 — Teilnehmerformular | Complete |
+| DSGN-02 | Phase 1 — Teilnehmerformular | Complete |
+| DSGN-03 | Phase 1 — Teilnehmerformular | Complete |
+| DSGN-04 | Phase 1 — Teilnehmerformular | Complete |
+| DSGN-05 | Phase 1 — Teilnehmerformular | Complete |
+| DSGN-06 | Phase 1 — Teilnehmerformular | Complete |
 | ADMN-01 | Phase 2 — Admin & Deployment | Pending |
 | ADMN-02 | Phase 2 — Admin & Deployment | Pending |
 | ADMN-03 | Phase 2 — Admin & Deployment | Pending |
