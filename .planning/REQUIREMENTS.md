@@ -69,18 +69,37 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| FORM-01 bis FORM-06 | Phase 1 | Pending |
-| STOR-01 bis STOR-03 | Phase 1 | Pending |
-| CONF-01 bis CONF-03 | Phase 1 | Pending |
-| DSGN-01 bis DSGN-05 | Phase 1 | Pending |
-| ADMN-01 bis ADMN-05 | Phase 2 | Pending |
-| DEPL-01 bis DEPL-03 | Phase 2 | Pending |
+| FORM-01 | Phase 1 — Teilnehmerformular | Pending |
+| FORM-02 | Phase 1 — Teilnehmerformular | Pending |
+| FORM-03 | Phase 1 — Teilnehmerformular | Pending |
+| FORM-04 | Phase 1 — Teilnehmerformular | Pending |
+| FORM-05 | Phase 1 — Teilnehmerformular | Pending |
+| FORM-06 | Phase 1 — Teilnehmerformular | Pending |
+| STOR-01 | Phase 1 — Teilnehmerformular | Pending |
+| STOR-02 | Phase 1 — Teilnehmerformular | Pending |
+| STOR-03 | Phase 1 — Teilnehmerformular | Pending |
+| CONF-01 | Phase 1 — Teilnehmerformular | Pending |
+| CONF-02 | Phase 1 — Teilnehmerformular | Pending |
+| CONF-03 | Phase 1 — Teilnehmerformular | Pending |
+| DSGN-01 | Phase 1 — Teilnehmerformular | Pending |
+| DSGN-02 | Phase 1 — Teilnehmerformular | Pending |
+| DSGN-03 | Phase 1 — Teilnehmerformular | Pending |
+| DSGN-04 | Phase 1 — Teilnehmerformular | Pending |
+| DSGN-05 | Phase 1 — Teilnehmerformular | Pending |
+| ADMN-01 | Phase 2 — Admin & Deployment | Pending |
+| ADMN-02 | Phase 2 — Admin & Deployment | Pending |
+| ADMN-03 | Phase 2 — Admin & Deployment | Pending |
+| ADMN-04 | Phase 2 — Admin & Deployment | Pending |
+| ADMN-05 | Phase 2 — Admin & Deployment | Pending |
+| DEPL-01 | Phase 2 — Admin & Deployment | Pending |
+| DEPL-02 | Phase 2 — Admin & Deployment | Pending |
+| DEPL-03 | Phase 2 — Admin & Deployment | Pending |
 
 **Coverage:**
-- v1 requirements: 23 total
-- Mapped to phases: 23
+- v1 requirements: 25 total
+- Mapped to phases: 25
 - Unmapped: 0 ✓
 
 ---
 *Requirements defined: 2026-03-15*
-*Last updated: 2026-03-15 — Gruppe (1–8) als Pflichtfeld hinzugefügt*
+*Last updated: 2026-03-15 — Roadmap created, traceability expanded to individual rows*
