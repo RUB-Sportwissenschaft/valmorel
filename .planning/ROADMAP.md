@@ -12,7 +12,7 @@ Zwei Phasen: Zuerst die vollstaendige Teilnehmer-Experience (Formular, Speicheru
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Teilnehmerformular** - Vollstaendige Teilnehmer-Experience: Formular, Speicherung in JSONBin.io, Bestaetigung und RUB-Design
+- [x] **Phase 1: Teilnehmerformular** - Vollstaendige Teilnehmer-Experience: Formular, Speicherung in JSONBin.io, Bestaetigung und RUB-Design (completed 2026-03-15)
 - [ ] **Phase 2: Admin & Deployment** - Admin-Auswertungstabelle, PDF-Export und Single-File-Deployment auf GitHub Pages
 
 ## Phase Details
@@ -55,5 +55,5 @@ Phases execute in numeric order: 1 → 2
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Teilnehmerformular | 1/2 | In Progress|  |
+| 1. Teilnehmerformular | 2/2 | Complete   | 2026-03-15 |
 | 2. Admin & Deployment | 0/3 | Not started | - |

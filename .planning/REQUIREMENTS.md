@@ -11,20 +11,20 @@
 - [x] **FORM-02**: Teilnehmer kann Nachname eingeben (Pflichtfeld, min. 2 Zeichen)
 - [x] **FORM-03**: Teilnehmer wählt Gruppe (1–8, Pflichtfeld — Dropdown oder Radio-Buttons)
 - [x] **FORM-04**: Teilnehmer wählt genau eine Essensoption via Radio-Button: 🧀 Raclette | 🥦 Raclette vegetarisch | 🌱 Vegan
-- [ ] **FORM-05**: Absenden-Button ist deaktiviert bis alle Pflichtfelder ausgefüllt und eine Option gewählt ist
-- [ ] **FORM-06**: Formular-Validierung zeigt klare Fehlermeldungen auf Deutsch
+- [x] **FORM-05**: Absenden-Button ist deaktiviert bis alle Pflichtfelder ausgefüllt und eine Option gewählt ist
+- [x] **FORM-06**: Formular-Validierung zeigt klare Fehlermeldungen auf Deutsch
 
 ### Speicherung
 
-- [ ] **STOR-01**: Beim Absenden wird die Antwort (Vorname, Nachname, Gruppe, Wahl, Zeitstempel) via JSONBin.io API gespeichert
-- [ ] **STOR-02**: JSONBin.io API-Key und Bin-ID sind als Konstanten im HTML-File konfigurierbar
-- [ ] **STOR-03**: Fehler beim Speichern zeigt eine benutzerfreundliche Fehlermeldung
+- [x] **STOR-01**: Beim Absenden wird die Antwort (Vorname, Nachname, Gruppe, Wahl, Zeitstempel) via JSONBin.io API gespeichert
+- [x] **STOR-02**: JSONBin.io API-Key und Bin-ID sind als Konstanten im HTML-File konfigurierbar
+- [x] **STOR-03**: Fehler beim Speichern zeigt eine benutzerfreundliche Fehlermeldung
 
 ### Bestätigung
 
-- [ ] **CONF-01**: Nach erfolgreichem Absenden erscheint Bestätigungsscreen: "Danke, [Vorname]! Deine Wahl wurde gespeichert."
-- [ ] **CONF-02**: Bestätigungsscreen zeigt die gewählte Option und Gruppe noch einmal an
-- [ ] **CONF-03**: Kein Zurück-Button — einmalige Abstimmung pro Gerät (sessionStorage-Flag)
+- [x] **CONF-01**: Nach erfolgreichem Absenden erscheint Bestätigungsscreen: "Danke, [Vorname]! Deine Wahl wurde gespeichert."
+- [x] **CONF-02**: Bestätigungsscreen zeigt die gewählte Option und Gruppe noch einmal an
+- [x] **CONF-03**: Kein Zurück-Button — einmalige Abstimmung pro Gerät (sessionStorage-Flag)
 
 ### Admin-Ansicht
 
@@ -74,14 +74,14 @@
 | FORM-02 | Phase 1 — Teilnehmerformular | Complete |
 | FORM-03 | Phase 1 — Teilnehmerformular | Complete |
 | FORM-04 | Phase 1 — Teilnehmerformular | Complete |
-| FORM-05 | Phase 1 — Teilnehmerformular | Pending |
-| FORM-06 | Phase 1 — Teilnehmerformular | Pending |
-| STOR-01 | Phase 1 — Teilnehmerformular | Pending |
-| STOR-02 | Phase 1 — Teilnehmerformular | Pending |
-| STOR-03 | Phase 1 — Teilnehmerformular | Pending |
-| CONF-01 | Phase 1 — Teilnehmerformular | Pending |
-| CONF-02 | Phase 1 — Teilnehmerformular | Pending |
-| CONF-03 | Phase 1 — Teilnehmerformular | Pending |
+| FORM-05 | Phase 1 — Teilnehmerformular | Complete |
+| FORM-06 | Phase 1 — Teilnehmerformular | Complete |
+| STOR-01 | Phase 1 — Teilnehmerformular | Complete |
+| STOR-02 | Phase 1 — Teilnehmerformular | Complete |
+| STOR-03 | Phase 1 — Teilnehmerformular | Complete |
+| CONF-01 | Phase 1 — Teilnehmerformular | Complete |
+| CONF-02 | Phase 1 — Teilnehmerformular | Complete |
+| CONF-03 | Phase 1 — Teilnehmerformular | Complete |
 | DSGN-01 | Phase 1 — Teilnehmerformular | Complete |
 | DSGN-02 | Phase 1 — Teilnehmerformular | Complete |
 | DSGN-03 | Phase 1 — Teilnehmerformular | Complete |

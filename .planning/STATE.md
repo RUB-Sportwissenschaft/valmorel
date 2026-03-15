@@ -2,16 +2,16 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: planning
-stopped_at: Completed 01-01-PLAN.md
-last_updated: "2026-03-15T23:45:52.388Z"
-last_activity: 2026-03-15 — Roadmap created, 2 phases derived from 23 v1 requirements
+status: executing
+stopped_at: "Checkpoint: 01-02 Task 2 human-verify awaiting"
+last_updated: "2026-03-15T23:51:43.382Z"
+last_activity: "2026-03-16 — Plan 01-01 complete: statische HTML/CSS-Struktur mit RUB-Design und Base64-Assets"
 progress:
   total_phases: 2
-  completed_phases: 0
+  completed_phases: 1
   total_plans: 2
-  completed_plans: 1
-  percent: 0
+  completed_plans: 2
+  percent: 50
 ---
 
 # Project State
@@ -66,6 +66,8 @@ Recent decisions affecting current work:
 - Admin via ?admin=true (kein Passwort): Einfachheit fuer einmaligen Use-Case
 - [Phase 01-teilnehmerformular]: Node.js fuer Base64-Asset-Konvertierung (Python nicht verfuegbar auf Windows/Git-Bash)
 - [Phase 01-teilnehmerformular]: Emojis als Unicode-Escapes in HTML (Bash-Heredoc-Kompatibilitaet)
+- [Phase 01-teilnehmerformular]: Unicode-Escapes fuer deutsche Umlaute in JS-Strings (Windows/Git-Bash-Kompatibilitaet, gleiche Strategie wie Plan 01)
+- [Phase 01-teilnehmerformular]: JSONBIN_API_KEY und JSONBIN_BIN_ID als Konstanten oben im script-Block — fuer Phase-2-Admin-Zugriff gut sichtbar
 
 ### Pending Todos
 
@@ -77,6 +79,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-15T23:45:52.385Z
-Stopped at: Completed 01-01-PLAN.md
+Last session: 2026-03-15T23:51:04.684Z
+Stopped at: Checkpoint: 01-02 Task 2 human-verify awaiting
 Resume file: None
