@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 02-02-PLAN.md — PDF-Export complete, ready for 02-03 Deployment
-last_updated: "2026-03-16T06:25:41.624Z"
+stopped_at: Completed 02-03-PLAN.md — Deployment guide complete, all phases done
+last_updated: "2026-03-16T06:36:34.888Z"
 last_activity: "2026-03-16 — Plan 02-01 complete: Admin-Ansicht mit JSONBin-Datenladen und sortierbarer Tabelle"
 progress:
   total_phases: 2
-  completed_phases: 1
+  completed_phases: 2
   total_plans: 5
-  completed_plans: 4
+  completed_plans: 5
   percent: 100
 ---
 
@@ -53,6 +53,7 @@ Progress: [██████████] 100%
 | Phase 01-teilnehmerformular P01 | 12 | 1 tasks | 1 files |
 | Phase 01-teilnehmerformular P01 | 12 | 2 tasks | 1 files |
 | Phase 02-admin-deployment P02 | 10 | 2 tasks | 1 files |
+| Phase 02-admin-deployment P03 | 5 | 2 tasks | 1 files |
 
 ## Accumulated Context
 
@@ -73,6 +74,8 @@ Recent decisions affecting current work:
 - [Phase 02-admin-deployment]: window._adminRecords stores loaded records globally for cross-plan access (PDF plan 02-02)
 - [Phase 02-admin-deployment]: jsPDF + AutoTable loaded lazily via dynamic script injection on first pdf-btn click — no build step required
 - [Phase 02-admin-deployment]: window._adminRecords consumed directly from Plan 02-01 global — no data re-fetch needed for PDF generation
+- [Phase 02-admin-deployment]: Credential lines corrected to 371-372 in README (plan estimated 336-337 — code from earlier phases shifted lines)
+- [Phase 02-admin-deployment]: README uses real GitHub username RUB-Sportwissenschaft from git remote
 
 ### Pending Todos
 
@@ -84,6 +87,6 @@ None. Phase 1 vollstaendig abgeschlossen. Vor Phase 2: JSONBIN_API_KEY und JSONB
 
 ## Session Continuity
 
-Last session: 2026-03-16T06:25:41.621Z
-Stopped at: Completed 02-02-PLAN.md — PDF-Export complete, ready for 02-03 Deployment
+Last session: 2026-03-16T06:36:34.882Z
+Stopped at: Completed 02-03-PLAN.md — Deployment guide complete, all phases done
 Resume file: None

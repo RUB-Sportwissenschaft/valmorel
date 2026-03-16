@@ -45,9 +45,9 @@
 
 ### Deployment & Setup
 
-- [ ] **DEPL-01**: Gesamte App als Single HTML-File (alles inline: CSS + JS + Base64-Assets)
-- [ ] **DEPL-02**: README.md mit Schritt-für-Schritt-Anleitung: JSONBin.io Key eintragen → GitHub pushen → Pages aktivieren → WhatsApp-Link teilen
-- [ ] **DEPL-03**: Am Ende der HTML-Generierung nach GitHub-Username fragen für die fertige GitHub-Pages-URL
+- [x] **DEPL-01**: Gesamte App als Single HTML-File (alles inline: CSS + JS + Base64-Assets)
+- [x] **DEPL-02**: README.md mit Schritt-für-Schritt-Anleitung: JSONBin.io Key eintragen → GitHub pushen → Pages aktivieren → WhatsApp-Link teilen
+- [x] **DEPL-03**: Am Ende der HTML-Generierung nach GitHub-Username fragen für die fertige GitHub-Pages-URL
 
 ## v2 Requirements
 
@@ -93,9 +93,9 @@
 | ADMN-03 | Phase 2 — Admin & Deployment | Complete |
 | ADMN-04 | Phase 2 — Admin & Deployment | Complete |
 | ADMN-05 | Phase 2 — Admin & Deployment | Complete |
-| DEPL-01 | Phase 2 — Admin & Deployment | Pending |
-| DEPL-02 | Phase 2 — Admin & Deployment | Pending |
-| DEPL-03 | Phase 2 — Admin & Deployment | Pending |
+| DEPL-01 | Phase 2 — Admin & Deployment | Complete |
+| DEPL-02 | Phase 2 — Admin & Deployment | Complete |
+| DEPL-03 | Phase 2 — Admin & Deployment | Complete |
 
 **Coverage:**
 - v1 requirements: 26 total
