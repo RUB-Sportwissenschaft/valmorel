@@ -9,7 +9,7 @@ Betreuer: Kilian. Alles läuft auf GitHub Pages, kein Backend.
 
 ## App 1: Einstufungstest (React/Vite)
 
-**Zweck:** Ski-Einstufungstest für Studierende (10 Fragen, Level 1–8)
+**Zweck:** Ski-Einstufungstest für Studierende — 10 Fragen, Ergebnis Level 1–8 zur Gruppeneinteilung
 **Live:** https://rub-sportwissenschaft.github.io/valmorel/
 **Entry:** `index.html` → `src/main.jsx`
 
@@ -24,21 +24,21 @@ src/
   main.jsx
   index.css
   components/    WelcomeScreen, QuestionScreen, ProgressBar, AnswerButton, ResultScreen, AnswerSummary
-  data/          questions.js  ← Herzstück, Fragen noch als DRAFT
+  data/          questions.js  ← Herzstück — Fragen noch als DRAFT
   hooks/
   logic/
   utils/
-dist/            Build-Output (→ GitHub Pages)
+dist/            Build-Output (→ GitHub Pages gh-pages branch)
 ```
 
 ### Fragen-Logik
-- 5 feste Fragen (Fragen 1–5, Grundprofil)
+- 5 feste Fragen (Grundprofil, Fragen 1–5)
 - 2 adaptive Pool-Fragen nach Frage 5: `< 8 Pkt → low`, `8–14 → mid`, `≥ 14 → high`
 - 3 gemeinsame Abschlussfragen
 - Scoring: Summe 0–40 → Level 1–8
 
 ### Offener Arbeitsstand
-Fragen in `src/data/questions.js` sind noch **DRAFT** — müssen einzeln präzisiert werden.
+Fragen in `src/data/questions.js` sind noch **DRAFT** — müssen einzeln präzisiert werden (SJT/BARS-Format).
 
 ### Deployment
 ```bash
@@ -47,26 +47,11 @@ npm run build && npx gh-pages -d dist && git push
 
 ---
 
-## App 2: Essensumfrage (`valmorel.html`)
-
-**Zweck:** Einmalige Essensauswahl (Raclette / Raclette vegetarisch / Vegan)
-**Status:** Fertig ✓
-**Datei:** `valmorel.html` (Single-File, ~452 KB, 512 Zeilen)
-
-### Wichtige Stellen
-- **Zeilen 371–372:** `JSONBIN_API_KEY` + `JSONBIN_BIN_ID` — Credentials hier eintragen (Placeholder!)
-- **Admin:** `?admin=true` (kein Passwort) — Tabelle + PDF-Export
-- `window._adminRecords` — globales Array, von Admin-Tabelle und PDF geteilt
-- `escHtml()` — function declaration (hoisted), von Admin + PDF genutzt
-
-### Storage
-JSONBin.io: GET aktuellen Stand → lokal pushen → PUT zurück
-
----
-
 ## App 3: Hüttenabend (`huettenabend/index.html`)
 
-Separates HTML-File für Hüttenabend-Inhalt.
+**Zweck:** Eigene Single-HTML-App für den Hüttenabend
+**Datei:** `huettenabend/index.html` (~452 KB, 769 Zeilen)
+**Format:** Single-File — CSS, JS, RUB-Fonts (RubFlama, RUB Scala) als Base64 inline
 
 ---
 
