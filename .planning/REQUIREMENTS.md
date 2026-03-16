@@ -31,8 +31,8 @@
 - [x] **ADMN-01**: Admin-Ansicht erreichbar unter ?admin=true (kein Passwort)
 - [x] **ADMN-02**: Admin lädt alle Antworten aus JSONBin.io und zeigt Tabelle: Nachname | Vorname | Gruppe | Wahl | Zeitstempel
 - [x] **ADMN-03**: Tabelle sortierbar nach Nachname (alphabetisch) und nach Gruppe
-- [ ] **ADMN-04**: "PDF herunterladen"-Button lädt jsPDF + AutoTable via CDN und generiert PDF
-- [ ] **ADMN-05**: PDF enthält: Titel "Essensumfrage Valmorel", Datum, Teilnehmerliste als Tabelle (mit Gruppe), Auswertung (Anzahl pro Option, optional auch pro Gruppe)
+- [x] **ADMN-04**: "PDF herunterladen"-Button lädt jsPDF + AutoTable via CDN und generiert PDF
+- [x] **ADMN-05**: PDF enthält: Titel "Essensumfrage Valmorel", Datum, Teilnehmerliste als Tabelle (mit Gruppe), Auswertung (Anzahl pro Option, optional auch pro Gruppe)
 
 ### Design & UX
 
@@ -91,8 +91,8 @@
 | ADMN-01 | Phase 2 — Admin & Deployment | Complete |
 | ADMN-02 | Phase 2 — Admin & Deployment | Complete |
 | ADMN-03 | Phase 2 — Admin & Deployment | Complete |
-| ADMN-04 | Phase 2 — Admin & Deployment | Pending |
-| ADMN-05 | Phase 2 — Admin & Deployment | Pending |
+| ADMN-04 | Phase 2 — Admin & Deployment | Complete |
+| ADMN-05 | Phase 2 — Admin & Deployment | Complete |
 | DEPL-01 | Phase 2 — Admin & Deployment | Pending |
 | DEPL-02 | Phase 2 — Admin & Deployment | Pending |
 | DEPL-03 | Phase 2 — Admin & Deployment | Pending |

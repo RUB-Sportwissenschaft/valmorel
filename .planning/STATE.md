@@ -2,9 +2,9 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: completed
-stopped_at: "Completed 02-01-PLAN.md — Admin-Ansicht complete, ready for 02-02 PDF-Export"
-last_updated: "2026-03-16T07:00:00Z"
+status: executing
+stopped_at: Completed 02-02-PLAN.md — PDF-Export complete, ready for 02-03 Deployment
+last_updated: "2026-03-16T06:25:41.624Z"
 last_activity: "2026-03-16 — Plan 02-01 complete: Admin-Ansicht mit JSONBin-Datenladen und sortierbarer Tabelle"
 progress:
   total_phases: 2
@@ -52,6 +52,7 @@ Progress: [██████████] 100%
 *Updated after each plan completion*
 | Phase 01-teilnehmerformular P01 | 12 | 1 tasks | 1 files |
 | Phase 01-teilnehmerformular P01 | 12 | 2 tasks | 1 files |
+| Phase 02-admin-deployment P02 | 10 | 2 tasks | 1 files |
 
 ## Accumulated Context
 
@@ -70,6 +71,8 @@ Recent decisions affecting current work:
 - [Phase 01-teilnehmerformular]: JSONBIN_API_KEY und JSONBIN_BIN_ID als Konstanten oben im script-Block — fuer Phase-2-Admin-Zugriff gut sichtbar
 - [Phase 02-admin-deployment]: escHtml uses function declaration (not arrow) so it is hoisted and reusable in Plan 02-02
 - [Phase 02-admin-deployment]: window._adminRecords stores loaded records globally for cross-plan access (PDF plan 02-02)
+- [Phase 02-admin-deployment]: jsPDF + AutoTable loaded lazily via dynamic script injection on first pdf-btn click — no build step required
+- [Phase 02-admin-deployment]: window._adminRecords consumed directly from Plan 02-01 global — no data re-fetch needed for PDF generation
 
 ### Pending Todos
 
@@ -81,6 +84,6 @@ None. Phase 1 vollstaendig abgeschlossen. Vor Phase 2: JSONBIN_API_KEY und JSONB
 
 ## Session Continuity
 
-Last session: 2026-03-16T07:00:00Z
-Stopped at: Completed 02-01-PLAN.md — Admin-Ansicht complete, ready for 02-02 PDF-Export
+Last session: 2026-03-16T06:25:41.621Z
+Stopped at: Completed 02-02-PLAN.md — PDF-Export complete, ready for 02-03 Deployment
 Resume file: None
