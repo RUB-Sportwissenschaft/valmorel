@@ -537,6 +537,7 @@
     <h2>Admin &mdash; Hüttenabend Valmorel</h2>
     <p id="admin-loading">Daten werden geladen&hellip;</p>
     <p id="admin-error" hidden></p>
+    <div id="admin-summary" hidden style="display:flex;gap:2rem;margin-bottom:0.75rem;font-size:1rem;font-weight:bold;color:#003560;"></div>
     <div class="admin-table-wrap">
       <table class="admin-table" id="admin-table" hidden>
         <thead><tr>
@@ -551,7 +552,6 @@
       </table>
     </div>
     <button id="pdf-btn" hidden>PDF herunterladen</button>
-    <button id="admin-reset-btn" hidden onclick="resetAllRecords()">Alle Eintr\u00e4ge l\u00f6schen</button>
   </div>
 
   <footer>
@@ -765,7 +765,6 @@
       renderAdminTable('nachname', 'asc');
       document.getElementById('admin-table').hidden = false;
       document.getElementById('pdf-btn').hidden = false;
-      document.getElementById('admin-reset-btn').hidden = false;
     } catch (err) {
       loadingEl.hidden = true;
       errorEl.hidden = false;
@@ -834,6 +833,17 @@
     document.getElementById('admin-loading').textContent =
       records.length + ' Antwort' + (records.length !== 1 ? 'en' : '') + ' geladen.';
     document.getElementById('admin-loading').hidden = false;
+
+    // Zusammenfassung
+    const allRecords = window._adminRecords || [];
+    const gesamt = allRecords.length;
+    const vegetarisch = allRecords.filter(function(r) { return r.wahl === 'raclette-vegetarisch'; }).length;
+    const summaryEl = document.getElementById('admin-summary');
+    summaryEl.innerHTML =
+      '<span>Gesamt: ' + gesamt + '</span>' +
+      '<span>\uD83E\uDD66 Vegetarisch: ' + vegetarisch + '</span>' +
+      '<span>\uD83E\uDDC0 Klassisch: ' + (gesamt - vegetarisch) + '</span>';
+    summaryEl.hidden = false;
   }
 
   async function deleteRecord(timestamp) {
@@ -855,24 +865,7 @@
     }
   }
 
-  async function resetAllRecords() {
-    if (!confirm('Wirklich ALLE Eintr\u00e4ge l\u00f6schen? Das kann nicht r\u00fcckg\u00e4ngig gemacht werden.')) return;
-    window._adminRecords = [];
-    try {
-      const res = await fetch('https://api.jsonbin.io/v3/b/' + JSONBIN_BIN_ID, {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json', 'X-Master-Key': JSONBIN_API_KEY },
-        body: JSON.stringify([])
-      });
-      if (!res.ok) throw new Error('HTTP ' + res.status);
-      renderAdminTable('nachname', 'asc');
-    } catch (err) {
-      alert('Fehler: ' + err.message);
-      window.location.reload();
-    }
-  }
-
-  function escHtml(str) {
+function escHtml(str) {
     return String(str)
       .replace(/&/g, '&amp;')
       .replace(/</g, '&lt;')
