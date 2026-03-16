@@ -649,6 +649,118 @@
       .replace(/>/g, '&gt;')
       .replace(/"/g, '&quot;');
   }
+
+  // === I: PDF-Export ===
+  function generatePdf() {
+    const records = window._adminRecords || [];
+    const btn = document.getElementById('pdf-btn');
+    btn.disabled = true;
+    btn.textContent = 'PDF wird erstellt\u2026';
+
+    // jsPDF + AutoTable per CDN laden (lazy, nur bei erstem Klick)
+    function doGenerate() {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
+
+      const today = new Date().toLocaleDateString('de-DE',
+        { day: '2-digit', month: '2-digit', year: 'numeric' });
+      const filename = 'essensumfrage-valmorel-' +
+        new Date().toISOString().slice(0,10) + '.pdf';
+
+      // Titel
+      doc.setFontSize(16);
+      doc.setTextColor(0, 53, 96); // #003560
+      doc.text('Essensumfrage Valmorel', 14, 20);
+      doc.setFontSize(10);
+      doc.setTextColor(80, 80, 80);
+      doc.text('Datum: ' + today + '  |  Teilnehmer: ' + records.length, 14, 28);
+
+      // Teilnehmerliste
+      const wahlDisplay = {
+        'raclette': 'Raclette',
+        'raclette-vegetarisch': 'Raclette vegetarisch',
+        'vegan': 'Vegan'
+      };
+      const tableBody = records.map(function(r) {
+        const ts = r.timestamp
+          ? new Date(r.timestamp).toLocaleString('de-DE')
+          : '\u2014';
+        return [
+          r.nachname  || '',
+          r.vorname   || '',
+          String(r.gruppe || ''),
+          wahlDisplay[r.wahl] || r.wahl || '',
+          ts
+        ];
+      });
+
+      doc.autoTable({
+        head: [['Nachname', 'Vorname', 'Gruppe', 'Wahl', 'Zeitstempel']],
+        body: tableBody,
+        startY: 34,
+        styles: { fontSize: 9 },
+        headStyles: { fillColor: [0, 53, 96] }
+      });
+
+      // Auswertung: Anzahl pro Option
+      const counts = { 'raclette': 0, 'raclette-vegetarisch': 0, 'vegan': 0 };
+      records.forEach(function(r) {
+        if (counts[r.wahl] !== undefined) counts[r.wahl]++;
+      });
+      const afterTable = doc.lastAutoTable.finalY + 10;
+      doc.setFontSize(12);
+      doc.setTextColor(0, 53, 96);
+      doc.text('Auswertung', 14, afterTable);
+      doc.autoTable({
+        head: [['Essensoption', 'Anzahl']],
+        body: [
+          ['Raclette',              String(counts['raclette'])],
+          ['Raclette vegetarisch',  String(counts['raclette-vegetarisch'])],
+          ['Vegan',                 String(counts['vegan'])]
+        ],
+        startY: afterTable + 4,
+        styles: { fontSize: 10 },
+        headStyles: { fillColor: [236, 99, 58] } // #EC633A
+      });
+
+      doc.save(filename);
+      btn.disabled = false;
+      btn.textContent = 'PDF herunterladen';
+    }
+
+    // CDN-Skripte laden falls noch nicht vorhanden
+    if (window.jspdf && window.jspdf.jsPDF) {
+      doGenerate();
+      return;
+    }
+    var s1 = document.createElement('script');
+    s1.src = 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+    s1.onload = function() {
+      var s2 = document.createElement('script');
+      s2.src = 'https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js';
+      s2.onload = doGenerate;
+      s2.onerror = function() {
+        btn.disabled = false;
+        btn.textContent = 'PDF herunterladen';
+        alert('CDN-Fehler: AutoTable konnte nicht geladen werden. Bitte Internetverbindung pr\u00fcfen.');
+      };
+      document.head.appendChild(s2);
+    };
+    s1.onerror = function() {
+      btn.disabled = false;
+      btn.textContent = 'PDF herunterladen';
+      alert('CDN-Fehler: jsPDF konnte nicht geladen werden. Bitte Internetverbindung pr\u00fcfen.');
+    };
+    document.head.appendChild(s1);
+  }
+
+  // pdf-btn Handler setzen (nach DOMContentLoaded, aber initAdmin() laedt async —
+  // daher sicher mit onclick-Attribut statt addEventListener, da das DOM-Element
+  // bereits im HTML deklariert ist)
+  document.addEventListener('DOMContentLoaded', function() {
+    var pdfBtn = document.getElementById('pdf-btn');
+    if (pdfBtn) pdfBtn.onclick = generatePdf;
+  });
   </script>
 </body>
 </html>
