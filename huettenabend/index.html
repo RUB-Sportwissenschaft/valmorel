@@ -851,11 +851,12 @@
     const idx = window._adminRecords.findIndex(function(r) { return r.timestamp === timestamp; });
     if (idx === -1) { alert('Eintrag nicht gefunden.'); return; }
     window._adminRecords.splice(idx, 1);
+    const payload = window._adminRecords.length === 0 ? { records: [] } : window._adminRecords;
     try {
       const res = await fetch('https://api.jsonbin.io/v3/b/' + JSONBIN_BIN_ID, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json', 'X-Master-Key': JSONBIN_API_KEY },
-        body: JSON.stringify(window._adminRecords)
+        body: JSON.stringify(payload)
       });
       if (!res.ok) throw new Error('HTTP ' + res.status);
       renderAdminTable('nachname', 'asc');
