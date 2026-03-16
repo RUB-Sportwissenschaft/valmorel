@@ -541,6 +541,114 @@
         `<p><strong>Gruppe:</strong> ${antwort.gruppe}</p>
          <p><strong>Essenswahl:</strong> ${wahlLabels[antwort.wahl] || antwort.wahl}</p>`;
     }
+
+  // === H: Admin-Ansicht ===
+  (function initAdmin() {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('admin') !== 'true') return;
+
+    // Formular ausblenden, Admin einblenden
+    const mainEl = document.querySelector('main');
+    if (mainEl) mainEl.style.display = 'none';
+    const adminView = document.getElementById('admin-view');
+    adminView.style.display = 'block';
+
+    // Titelzeile aendern
+    document.title = 'Admin \u2014 Essensumfrage Valmorel';
+
+    loadAdminData();
+  })();
+
+  async function loadAdminData() {
+    const loadingEl = document.getElementById('admin-loading');
+    const errorEl   = document.getElementById('admin-error');
+    try {
+      const res = await fetch(
+        'https://api.jsonbin.io/v3/b/' + JSONBIN_BIN_ID + '/latest',
+        { headers: { 'X-Master-Key': JSONBIN_API_KEY } }
+      );
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      const json = await res.json();
+      const records = Array.isArray(json.record) ? json.record : [];
+      loadingEl.hidden = true;
+      window._adminRecords = records;
+      renderAdminTable('nachname', 'asc');
+      document.getElementById('admin-table').hidden = false;
+      document.getElementById('pdf-btn').hidden = false;
+    } catch (err) {
+      loadingEl.hidden = true;
+      errorEl.hidden = false;
+      errorEl.textContent = 'Fehler beim Laden der Daten: ' + err.message +
+        '. Bitte Seite neu laden.';
+    }
+  }
+
+  function renderAdminTable(sortField, sortDir) {
+    const records = (window._adminRecords || []).slice();
+    const wahlDisplay = {
+      'raclette': '\uD83E\uDDC0 Raclette',
+      'raclette-vegetarisch': '\uD83E\uDD66 Raclette vegetarisch',
+      'vegan': '\uD83C\uDF31 Vegan'
+    };
+
+    records.sort(function(a, b) {
+      let va = a[sortField] || '';
+      let vb = b[sortField] || '';
+      if (sortField === 'gruppe') {
+        va = parseInt(va, 10) || 0;
+        vb = parseInt(vb, 10) || 0;
+        return sortDir === 'asc' ? va - vb : vb - va;
+      }
+      va = String(va).toLowerCase();
+      vb = String(vb).toLowerCase();
+      if (va < vb) return sortDir === 'asc' ? -1 : 1;
+      if (va > vb) return sortDir === 'asc' ?  1 : -1;
+      return 0;
+    });
+
+    // Spaltenkoepfe: Sortier-Klassen aktualisieren
+    document.querySelectorAll('table.admin-table th').forEach(function(th) {
+      th.classList.remove('sort-asc', 'sort-desc');
+      if (th.dataset.col === sortField) {
+        th.classList.add(sortDir === 'asc' ? 'sort-asc' : 'sort-desc');
+      }
+    });
+
+    // Zeilen rendern
+    const tbody = document.getElementById('admin-tbody');
+    tbody.innerHTML = records.map(function(r) {
+      const ts = r.timestamp ? new Date(r.timestamp).toLocaleString('de-DE') : '\u2014';
+      return '<tr>' +
+        '<td>' + escHtml(r.nachname  || '') + '</td>' +
+        '<td>' + escHtml(r.vorname   || '') + '</td>' +
+        '<td>' + escHtml(String(r.gruppe || '')) + '</td>' +
+        '<td>' + escHtml(wahlDisplay[r.wahl] || r.wahl || '') + '</td>' +
+        '<td>' + escHtml(ts) + '</td>' +
+        '</tr>';
+    }).join('');
+
+    // Spaltenkoepfe: Klick-Handler (neu setzen, um doppelte Listener zu vermeiden)
+    document.querySelectorAll('table.admin-table th').forEach(function(th) {
+      th.onclick = function() {
+        const col = th.dataset.col;
+        const newDir = (col === sortField && sortDir === 'asc') ? 'desc' : 'asc';
+        renderAdminTable(col, newDir);
+      };
+    });
+
+    // Kurzinfo
+    document.getElementById('admin-loading').textContent =
+      records.length + ' Antwort' + (records.length !== 1 ? 'en' : '') + ' geladen.';
+    document.getElementById('admin-loading').hidden = false;
+  }
+
+  function escHtml(str) {
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
   </script>
 </body>
 </html>
