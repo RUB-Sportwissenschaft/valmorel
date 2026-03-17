@@ -408,6 +408,9 @@
     .btn-delete:hover { background: #922b21; }
     #admin-reset-btn { background: #7f8c8d; color: #fff; border: none; padding: 0.75rem 1.5rem; font-size: 1rem; border-radius: 6px; cursor: pointer; margin-top: 1rem; margin-left: 0.75rem; }
     #admin-reset-btn:hover { background: #626d6e; }
+    #admin-group-badges { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
+    .group-badge { display: inline-flex; align-items: center; gap: 0.35rem; background: #e8f0fe; color: #003560; border: 1px solid #b0c4de; border-radius: 999px; padding: 0.3rem 0.75rem; font-size: 0.85rem; font-weight: 600; font-family: 'RubFlama', system-ui, sans-serif; }
+    .group-badge .badge-count { background: #003560; color: #fff; border-radius: 50%; min-width: 1.4em; height: 1.4em; display: inline-flex; align-items: center; justify-content: center; font-size: 0.8rem; }
   </style>
 </head>
 <body>
@@ -524,6 +527,7 @@
     <p id="admin-loading">Daten werden geladen&hellip;</p>
     <p id="admin-error" hidden></p>
     <div id="admin-summary" hidden style="display:flex;gap:2rem;margin-bottom:0.75rem;font-size:1rem;font-weight:bold;color:#003560;"></div>
+    <div id="admin-group-badges" hidden></div>
     <div class="admin-table-wrap">
       <table class="admin-table" id="admin-table" hidden>
         <thead><tr>
@@ -831,6 +835,22 @@
       '<span>\uD83E\uDD66 Vegetarisch: ' + vegetarisch + '</span>' +
       '<span>\uD83E\uDDC0 Klassisch: ' + (gesamt - vegetarisch) + '</span>';
     summaryEl.hidden = false;
+
+    // Gruppen-Badges
+    var gruppenOrder = ['1','2','3','4','5','6','7','8','Snowboard'];
+    var gruppenCount = {};
+    gruppenOrder.forEach(function(g) { gruppenCount[g] = 0; });
+    allRecords.forEach(function(r) {
+      var g = String(r.gruppe || '');
+      if (g in gruppenCount) gruppenCount[g]++;
+    });
+    var badgesEl = document.getElementById('admin-group-badges');
+    badgesEl.innerHTML = gruppenOrder.map(function(g) {
+      var label = g === 'Snowboard' ? '\uD83C\uDFC2 Snowboard' : '\u26F7\uFE0F Gruppe ' + g;
+      return '<span class="group-badge">' + label +
+        ' <span class="badge-count">' + gruppenCount[g] + '</span></span>';
+    }).join('');
+    badgesEl.hidden = false;
   }
 
   async function deleteRecord(timestamp) {
