@@ -23,7 +23,7 @@ Valmorel/
 ## App 1: Einstufungstest (`einstufungstest/`)
 
 **Zweck:** Ski-Einstufungstest f\u00fcr Studierende — 10 Fragen, Ergebnis Level 1–8 zur Gruppeneinteilung
-**Live:** https://rub-sportwissenschaft.github.io/valmorel/
+**Live:** https://rub-sportwissenschaft.github.io/valmorel/einstufung/
 **Entry:** `einstufungstest/index.html` → `einstufungstest/src/main.jsx`
 
 ### Stack
@@ -59,7 +59,7 @@ Fragen in `einstufungstest/src/data/questions.js` sind noch **DRAFT** — m\u00f
 
 ### Deployment
 ```bash
-cd einstufungstest && npm run build && npx gh-pages -d dist && cd .. && git push
+cd einstufungstest && npm run build && npx gh-pages -d dist --dest einstufung && cd .. && git push
 ```
 
 ---
