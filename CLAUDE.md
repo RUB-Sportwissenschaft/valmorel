@@ -32,13 +32,14 @@ Valmorel/
 
 ---
 
-## Prüfungsorganisation (`pruefung/`)
+## Prüfungsanmeldung (`pruefung/`)
 
-**Zweck:** Prüfungsanmeldung — Teilnahme, Abschlussart, Uni, Gruppe
+**Zweck:** Anmeldung Seminarabschluss / Prüfung Schneesport Exkursion 2026
 **Live:** https://rub-sportwissenschaft.github.io/pruefung/
+**Admin:** https://rub-sportwissenschaft.github.io/pruefung/?admin=true
 **Repo:** https://github.com/RUB-Sportwissenschaft/pruefung
 **Lokal:** `C:\Users\kilia\OneDrive\Desktop\Valmorel\pruefung\`
-**Format:** Single-File `index.html` (~38 KB) — Fonts + Logos als externe Dateien
+**Format:** Single-File `index.html` — Fonts + Logos als externe Dateien
 **Struktur:**
 ```
 pruefung/
@@ -49,8 +50,13 @@ pruefung/
   fonts/RubFlama-Bold.ttf
 ```
 **Backend:** JSONBin v3, BIN-ID: `69bd6303b7ec241ddc88081a`
-**Status:** App fertig — Abschluss-Beschreibungen und Einleitungstext noch Platzhalter (warten auf finalen Text)
-**Formular-Logik:** Prüfungsbestätigung zuerst → danach Name, Gruppe, Uni, Abschluss sichtbar
+**Status:** App fertig und live
+**Formular-Felder:** Name, Uni, Studienrichtung (3 Optionen), Gruppe, Abschluss
+**Abschluss-Logik:**
+- 3 Optionen: Studienleistung, (Modul)Prüfung, Lizenzen
+- Studienleistung und (Modul)Prüfung schließen sich gegenseitig aus
+- Lizenzen ist mit beiden kombinierbar
+- (Modul)Prüfung-Label passt sich dynamisch an Uni-Auswahl an (RUB: M4 Praxis, TU: Natursport)
 
 ---
 
